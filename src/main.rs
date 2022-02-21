@@ -18,7 +18,6 @@ async fn main() -> std::io::Result<()> {
     let app = HttpServer::new(move || {
         App::new()
             .app_data(app_state.clone())
-            .configure(controller::init_index_controller)
             .configure(controller::init_user_controller)
             .configure(controller::init_group_controller)
     })
